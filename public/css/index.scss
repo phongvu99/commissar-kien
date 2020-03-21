@@ -1,7 +1,16 @@
+@import './myvariables';
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+html,
+body {
+    background: $color;
 }
 
 .mobile__text {
@@ -14,51 +23,79 @@
     background-color: #666;
 }
 
-@media only screen and (min-width: 576px) {}
+// min equivalence
+@include media-breakpoint-up(sm) {
 
-@media only screen and (min-width: 768px) {}
-
-@media only screen and (min-width: 992px) {
-    .card-img__header--alt {
-        font-size: 4rem;
-    }
-
-    .mobile__text--responsive {
-        display: none;
-    }
-
-    .navbar {
-        height: 80px;
+    .nav-link,
+    section {
+        font-size: 1.4rem;
     }
 }
 
-@media only screen and (max-width: 992px) {
-    .card-img__header--responsive {
-        display: none;
+@include media-breakpoint-up(md) {
+
+    .nav-link,
+    section {
+        font-size: 1.45rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+
+    .nav-link,
+    section {
+        font-size: 1.5rem;
     }
 
-    .card-img__header--alt {
-        font-size: 3rem;
+    .card-img__header {
+        font-size: 5rem;
     }
 
+    .navbar {
+        height: 100px;
+    }
+
+    .card {
+        height: 720px;
+        overflow: hidden;
+    }
+
+    .card-img {
+        margin: -250px 0 0 0;
+    }
+
+    .section-container__text {
+        font-size: 5rem;
+    }
+}
+
+// max equivalence
+// Somehow this is xl
+@include media-breakpoint-down(lg) {
     .mobile__text--responsive {
         font-size: 1.5rem;
     }
 }
 
-@media only screen and (max-width: 768px) {
+// Somehow this is lg
+@include media-breakpoint-down(md) {
     .mobile__text--responsive {
         font-size: 1.25rem;
     }
 
-    .card-img__header--alt {
-        font-size: 2.5rem;
+    .card-img__header {
+        font-size: 4.5rem;
     }
 }
 
-@media only screen and (max-width: 576px) {
-    .card-img__header--alt {
-        font-size: 2rem;
+// Somehow this is md
+@include media-breakpoint-down(sm) {
+    section {
+        font-size: 1rem;
+    }
+
+    .card-img__header {
+        font-size: 3rem;
     }
 
     .mobile__text--responsive {
@@ -66,14 +103,21 @@
     }
 }
 
-.card-img__header {
-    font-weight: 700;
+.nav-container {
+    margin-top: 10em;
+}
+
+.navbar {
+    background: $color;
 }
 
 .card-img {
     opacity: 0.5;
 }
 
-#about, #skills, #portfolio, #contact {
-    height: 40em;
-}
+// #about,
+// #skills,
+// #portfolio,
+// #contact {
+//     height: 20em;
+// }

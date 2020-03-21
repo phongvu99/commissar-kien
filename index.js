@@ -2,11 +2,15 @@ require('dotenv').config();
 
 const path = require('path');
 
+const bodyParser = require('body-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 const errorsController = require('./controllers/errors');
@@ -27,4 +31,3 @@ const PORT = process.env.PORT;
 app.listen(PORT || process.env.PORT, () => {
     console.log('App started on port:', PORT);
 });
-

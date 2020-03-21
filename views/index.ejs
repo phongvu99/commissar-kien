@@ -1,15 +1,13 @@
 <%- include('./templates/header.ejs');  %>
 </head>
 
-<body class="bg-white">
+<body class="position-relative" data-spy="scroll" data-target="#navbar-spy" data-offset="200" >
+  <%# include('./index_pre_navbar.ejs');%>
   <%- include('./index_navbar.ejs');%>
   <%- include('./index_header.ejs');%>
   <%- include('./index_about.ejs');%>
   <%- include('./index_skills.ejs');%>
   <%- include('./index_portfolio.ejs');%>
   <%- include('./index_contact.ejs');%>
-
-  
  
-
 <%- include('./templates/footer.ejs');%>
