@@ -10801,6 +10801,9 @@ body {
   section {
     font-size: 1.45rem;
   }
+  .nav-container {
+    margin-top: 10em;
+  }
 }
 
 @media (min-width: 992px) {
@@ -10851,10 +10854,9 @@ body {
   .mobile__text--responsive {
     font-size: 1rem;
   }
-}
-
-.nav-container {
-  margin-top: 10em;
+  .nav-container {
+    margin-top: 5em;
+  }
 }
 
 .navbar {

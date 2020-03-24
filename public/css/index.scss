@@ -38,6 +38,10 @@ body {
     section {
         font-size: 1.45rem;
     }
+
+    .nav-container {
+        margin-top: 10em;
+    }
 }
 
 @include media-breakpoint-up(lg) {
@@ -101,10 +105,10 @@ body {
     .mobile__text--responsive {
         font-size: 1rem;
     }
-}
 
-.nav-container {
-    margin-top: 10em;
+    .nav-container {
+        margin-top: 5em;
+    }
 }
 
 .navbar {

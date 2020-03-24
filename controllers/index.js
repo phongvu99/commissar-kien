@@ -16,45 +16,38 @@ const getIndex = (req, res, next) => {
 };
 
 const postContact = async (req, res, next) => {
+
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message;
+    // const token = req.body['g-recaptcha-response'];
+
     const emailContact = {
-        from: 'info@the16anh.com',
-        to: 'phongvu99@outlook.com',
-        subject: 'Sending with NodeMailer is fun!',
-        text: 'Text version lorem ipsum',
-        html: `<p>CHECK THIS OUT!</p>
-        <h1>Thank you for contacting me!</h1>
+        from: 'do-not-reply@the16anh.com',
+        to: email,
+        subject: 'Thank you for contacting!',
+        text: 'Thank you for contacting!',
+        html: `<h1>Thank you for contacting me!</h1>
+        <p>Please do not reply to this email, I will get back to you soon!</p>
+        <p>Thank you very much!</p>
         `
     };
 
     const emailNotify = {
-        from: 'phongvu99@outlook.com',
-        to: 'camperchadway2001@gmail.com',
-        subject: 'It\'s Urgent, we need to talk!',
-        text: 'I saw your porfolio page',
-        html: `<p>Test email. I want to discuss about the job you're looking for. Here at
-        Boogle we want someone like you, a talented 3D animator. Please let us know what you think!
-        
-        Regards,
-        Phong`
+        from: email,
+        to: 'phongvu99@outlook.com',
+        subject: `Hi, I'm ${name}, let's talk!`,
+        text: `${message}`,
+        html: `${message}`
     };
     try {
-        console.log('Req body', req.body);
-        const token = req.body['g-recaptcha-response'];
-        if (!token) {
-            const err = new Error('Invalid token!');
-            err.status = 422;
-            throw err;
-        }
-        res.status(200).json({
-            token: token
-        });
         // const info1 = await client.sendMail(emailContact);
         // const info2 = await client.sendMail(emailNotify);
         // console.log('Info', info1);
         // console.log('Info', info2);
-        // res.status(200).json({
-        //     message: 'Message Sent!'
-        // });
+        res.status(200).json({
+            message: 'Message Sent!'
+        });
     } catch (err) {
         next(err);
     }
