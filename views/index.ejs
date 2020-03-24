@@ -1,7 +1,8 @@
 <%- include('./templates/header.ejs');  %>
 </head>
 
-<body class="position-relative" data-spy="scroll" data-target="#navbar-spy" data-offset="80" >
+<body class="position-relative" data-spy="scroll" data-target="#navbar-spy" data-offset="80">
+  <div class="loading"></div>
   <%# include('./index_pre_navbar.ejs');%>
   <%- include('./index_navbar.ejs');%>
   <%- include('./index_header.ejs');%>
@@ -9,5 +10,5 @@
   <%- include('./index_skills.ejs');%>
   <%- include('./index_portfolio.ejs');%>
   <%- include('./index_contact.ejs');%>
- 
-<%- include('./templates/footer.ejs');%>
+
+  <%- include('./templates/footer.ejs');%>

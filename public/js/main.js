@@ -1,3 +1,9 @@
+// Wait for window load
+$(window).on('load', function () {
+    // Animate loader off screen
+    $('.loading').fadeOut('slow')
+});
+
 $('a[href*="#"]').click(function (event) {
     event.preventDefault();
     const target = $(this.hash);
@@ -17,7 +23,7 @@ let widgetId1;
 let widgetId2;
 
 window.expiredCallback = () => {
-     document.getElementById('send').disabled = true;
+    document.getElementById('send').disabled = true;
 }
 
 if (!window.onloadCallback) {
@@ -31,3 +37,4 @@ if (!window.onloadCallback) {
         });
     };
 }
+
